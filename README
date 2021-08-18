@@ -1,0 +1,27 @@
+this module requires following python packages: 
+webrtcvad
+pyaudio
+deepspeech
+
+
+to get the pertained model, navigate to speech_to_text directory and then run this: 
+wget -O - https://github.com/mozilla/DeepSpeech/releases/download/v0.3.0/deepspeech-0.3.0-models.tar.gz | tar xvfz -
+
+make sure the model located in ./speech_to_test directory
+
+to run the tests: 
+cd tests
+python -m unittest test_AudioStream
+python -m unittest test_Speech2Text
+
+
+to run the speech detection: 
+ python ./AudioStream.py --model ./models/output_graph.pbmm --alphabet ./models/alphabet.txt --lm ./models/lm.binary --trie ./models/trie
+
+and speak to microphone when it prompts: 
+* recording...
+* done
+
+wait for detection to happen, have FUN.
+
+
